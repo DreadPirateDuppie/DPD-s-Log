@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery - My Blog</title>
+    <title>Gallery - My Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Image Gallery</h1>
+        <h1>Gallery</h1>
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -20,39 +21,33 @@
     <main>
         <section id="gallery">
             <h2>Image Gallery</h2>
-            <div class="gallery-grid">
-            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 My Blog. All rights reserved.</p>
+        <p>&copy; Golden_God_Prod, 2025. All rights reserved.</p>
     </footer>
     <script>
-        const galleryContainer = document.querySelector('.gallery-grid');
-        const galleryPath = 'Gallery/'; // Path to the gallery folder
+        // Dynamically load images into the gallery from the "gallery" folder
+        const galleryFolder = 'gallery'; // Path to your gallery folder
+        const galleryGrid = document.getElementById('gallery-grid');
 
-        // Function to fetch and display images
-        function loadImages() {
-            // Simulate fetching image names (you would replace this with actual fetching logic)
-            const images = [
-                'image1.jpg',
-                'image2.jpg',
-                'image3.jpg',
-                'image4.jpg',
-                'image5.jpg',
-                'image6.jpg'
-            ];
+        // Simulating images dynamically retrieved from a folder (replace with server-side logic if needed)
+        const imageFiles = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg' // Add more filenames here
+        ];
 
-            images.forEach(image => {
-                const imgElement = document.createElement('img');
-                imgElement.src = galleryPath + image;
-                imgElement.alt = image;
-                galleryContainer.appendChild(imgElement);
-            });
-        }
-
-        // Load images on page load
-        window.onload = loadImages;
+        // Create image elements and append them to the grid
+        imageFiles.forEach(fileName => {
+            const img = document.createElement('img');
+            img.src = `${galleryFolder}/${fileName}`;
+            img.alt = fileName;
+            img.classList.add('gallery-image');
+            galleryGrid.appendChild(img);
+        });
     </script>
 </body>
 </html>

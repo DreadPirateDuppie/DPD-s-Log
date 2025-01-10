@@ -127,3 +127,38 @@ function initializePage() {
 
 // Run initialization on page load
 window.onload = initializePage;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryGrid = document.getElementById("gallery-grid");
+
+    // Dynamically fetch image files (update this part for server-side integration if needed)
+    const imageFolder = "./gallery"; // Relative path to the gallery folder
+    const imageExtensions = ["jpg", "jpeg", "png", "gif"]; // Supported image extensions
+
+    // Simulated list of image files for client-side only (replace with a server call for real apps)
+    const fetchImages = async () => {
+        try {
+            const response = await fetch(imageFolder); // This would require a server
+            const files = await response.json(); // This assumes a server-side script returns the file list
+            return files.filter(file => imageExtensions.some(ext => file.endsWith(ext)));
+        } catch (error) {
+            console.error("Error fetching images:", error);
+            return ["image1.jpg", "image2.jpg", "image3.png"]; // Default fallback
+        }
+    };
+
+    // Populate the gallery
+    const loadGallery = async () => {
+        const imageFiles = await fetchImages();
+
+        imageFiles.forEach(fileName => {
+            const img = document.createElement("img");
+            img.src = `${imageFolder}/${fileName}`;
+            img.alt = fileName;
+            img.classList.add("gallery-image");
+            galleryGrid.appendChild(img);
+        });
+    };
+
+    loadGallery();
+});
