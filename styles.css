@@ -1,13 +1,9 @@
 /* General body styles */
 body {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
+    margin: 0; /* Keep the default margin */
+    padding: 0; /* Keep the default padding */
     font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
     line-height: 1.6;
-    padding: 0;
     background-color: #000000; /* Black background */
     color: #00ff00; /* Green text */
 }
@@ -105,7 +101,7 @@ button:hover {
 /* Password container styles */
 .password-container {
     padding: 20px; /* Keep the padding */
-    margin: auto; /* Center the container */
+    margin: 50px auto; /* Center horizontally and add margin at the top */
     max-width: 400px; /* Set a maximum width for the container */
     background-color: black; /* Set background color to black */
     color: green; /* Set text color to green for visibility */
