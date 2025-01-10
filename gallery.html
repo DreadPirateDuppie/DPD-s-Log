@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Image Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="log-entry.html">Write Log</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Blog. All rights reserved.</p>
+    </footer>
+    <script>
+        const galleryContainer = document.querySelector('.gallery-grid');
+        const galleryPath = 'Gallery/'; // Path to the gallery folder
+
+        // Function to fetch and display images
+        function loadImages() {
+            // Simulate fetching image names (you would replace this with actual fetching logic)
+            const images = [
+                'image1.jpg',
+                'image2.jpg',
+                'image3.jpg',
+                'image4.jpg',
+                'image5.jpg',
+                'image6.jpg'
+            ];
+
+            images.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = galleryPath + image;
+                imgElement.alt = image;
+                galleryContainer.appendChild(imgElement);
+            });
+        }
+
+        // Load images on page load
+        window.onload = loadImages;
+    </script>
+</body>
+</html>

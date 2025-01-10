@@ -1,0 +1,127 @@
+/* General body styles */
+body {
+    font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Black background */
+    color: #00ff00; /* Green text */
+}
+
+/* Header styles */
+header {
+    background: #000000;
+    color: #00ff00;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation styles */
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00ff00; /* Green links */
+    text-decoration: none;
+}
+
+/* New log entry form styles */
+#new-log {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #111;
+}
+
+#new-log input, #new-log textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #00ff00;
+}
+
+/* Button styles */
+button {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00cc00;
+}
+
+/* Search bar styles */
+#search {
+    margin: 20px;
+}
+
+/* Blog post styles */
+.blog-post {
+    background: #000000;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #00ff00; /* Green border */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.1);
+}
+
+/* Gallery styles */
+#gallery {
+    margin: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #new-log, #search, #logs {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .blog-post {
+        margin: 10px;
+        padding: 15px;
+    }
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #000000;
+    color: #00ff00;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
